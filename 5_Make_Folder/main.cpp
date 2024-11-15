@@ -1,34 +1,38 @@
-/*
-Given class Triangle (in files Triangle.h and Triangle.cpp), complete main() to read and set the base and height of triangle1 and of triangle2, determine which triangle's area is smaller, and output that triangle's info, making use of Triangle's relevant member functions.
-
-Ex: If the input is:
-
-3.0 4.0
-4.0 5.0
-where 3.0 is triangle1's base, 4.0 is triangle1's height, 4.0 is triangle2's base, and 5.0 is triangle2's height, the output is:
-
-Triangle with smaller area:
-Base: 3.00
-Height: 4.00
-Area: 6.00
-*/
-
 #include <iostream>
+#include <iomanip>
 #include "Triangle.h"
-using namespace std;
+
 
 int main() {
-   Triangle triangle1;
-   Triangle triangle2;
+    Triangle triangle1, triangle2;
+    double base1, height1, base2, height2;
 
-   // TODO: Read and set base and height for triangle1 (use SetBase() and SetHeight())
-      
-   // TODO: Read and set base and height for triangle2 (use SetBase() and SetHeight())
-       
-   cout << "Triangle with smaller area:" << endl;
-   
-   // TODO: Determine smaller triangle (use GetArea())  
-   //       and output smaller triangle's info (use PrintInfo())
-   
-   return 0;
+    //Now lets read input for triangle1 and triangle2
+    std::cin >> base1 >> height1;
+    std::cin >> base2 >> height2;
+
+    //Set base and height for each triangle
+    triangle1.SetBase(base1);
+    triangle1.SetHeight(height1);
+    triangle2.SetBase(base2);
+    triangle2.SetHeight(height2);
+
+    // Calculate areas of each triangle
+    double area1 = triangle1.getArea();
+    double area2 = triangle2.getArea();
+
+    // Lets determine and output the triangle with the smaller area
+    std::cout << "Triangle with smaller area:" << std::endl;
+
+    if (area1 < area2) {
+        std::cout << "Base: " << std::fixed << std::setprecision(2) << triangle1.getBase() << std::endl;
+        std::cout << "Height: " << std::fixed << std::setprecision(2) << triangle1.getHeight() << std::endl;
+        std::cout << "Area: " << std::fixed << std::setprecision(2) << area1 << std::endl;
+    } else {
+        std::cout << "Base: " << std::fixed << std::setprecision(2) << triangle2.getBase() << std::endl;
+        std::cout << "Height: " << std::fixed << std::setprecision(2) << triangle2.getHeight() << std::endl;
+        std::cout << "Area: " << std::fixed <<std::setprecision(2) << area2 << std::endl;
+    }
+
+    return 0;
 }
