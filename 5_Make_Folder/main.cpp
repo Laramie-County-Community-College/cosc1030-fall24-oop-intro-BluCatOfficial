@@ -12,10 +12,10 @@ int main() {
     std::cin >> base2 >> height2;
 
     //Set base and height for each triangle
-    triangle1.SetBase(base1);
-    triangle1.SetHeight(height1);
-    triangle2.SetBase(base2);
-    triangle2.SetHeight(height2);
+    triangle1.setBase(base1);
+    triangle1.setHeight(height1);
+    triangle2.setBase(base2);
+    triangle2.setHeight(height2);
 
     // Calculate areas of each triangle
     double area1 = triangle1.getArea();
@@ -25,14 +25,15 @@ int main() {
     std::cout << "Triangle with smaller area:" << std::endl;
 
     if (area1 < area2) {
-        std::cout << "Base: " << std::fixed << std::setprecision(2) << triangle1.getBase() << std::endl;
-        std::cout << "Height: " << std::fixed << std::setprecision(2) << triangle1.getHeight() << std::endl;
+        std::cout << "Base: " << std::fixed << std::setprecision(2) << triangle1.setBase() << std::endl;
+        std::cout << "Height: " << std::fixed << std::setprecision(2) << triangle1.setHeight() << std::endl;
         std::cout << "Area: " << std::fixed << std::setprecision(2) << area1 << std::endl;
     } else {
-        std::cout << "Base: " << std::fixed << std::setprecision(2) << triangle2.getBase() << std::endl;
-        std::cout << "Height: " << std::fixed << std::setprecision(2) << triangle2.getHeight() << std::endl;
-        std::cout << "Area: " << std::fixed <<std::setprecision(2) << area2 << std::endl;
+        std::cout << "Base: " << std::fixed << std::setprecision(2) << triangle2.setBase() << std::endl;
+        std::cout << "Height: " << std::fixed << std::setprecision(2) << triangle2.setHeight() << std::endl;
+        std::cout << "Area: " << std::fixed << std::setprecision(2) << area2 << std::endl;
     }
 
     return 0;
+
 }
