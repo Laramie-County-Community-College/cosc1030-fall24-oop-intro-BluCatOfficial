@@ -2,7 +2,6 @@
 #include <iomanip>
 #include "Triangle.h"
 
-
 int main() {
     Triangle triangle1, triangle2;
     double base1, height1, base2, height2;
